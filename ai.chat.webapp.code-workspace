@@ -1,0 +1,84 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": ["javascript", "javascriptreact"],
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "javascript.suggest.autoImports": true,
+    "typescript.suggest.autoImports": true,
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.defaultProfile.osx": "zsh"
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "ms-azuretools.vscode-docker",
+      "mongodb.mongodb-vscode",
+      "eamodio.gitlens",
+      "bradlc.vscode-tailwindcss",
+      "orta.vscode-jest",
+      "humao.rest-client",
+      "vscode-icons-team.vscode-icons",
+      "mikestead.dotenv",
+      "christian-kohler.npm-intellisense",
+      "formulahendry.auto-rename-tag"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch Backend",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}/backend/server.js"
+      },
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Frontend",
+        "url": "http://localhost:3000",
+        "webRoot": "${workspaceFolder}/frontend"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "Full Stack",
+        "configurations": ["Launch Backend", "Launch Frontend"]
+      }
+    ]
+  }
+}
